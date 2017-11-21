@@ -1,5 +1,4 @@
 import narrowOrParallel.replaceType.NewVehicleQuery;
-import narrowOrParallel.replaceType.OldVehicleQuery;
 import narrowOrParallel.replaceType.SqlVehicleMatcher;
 import org.junit.Test;
 
@@ -9,12 +8,11 @@ public class SqlVehicleMatcherShould {
     @Test
     public void find_vehicles() throws Exception {
         SqlVehicleMatcher matcher = new SqlVehicleMatcher();
-        OldVehicleQuery query = new OldVehicleQuery();
-        query.brandDescription = "VW Polo";
+        String brandDescription = "VW Polo";
 
         assertThat(matcher.countVehicles(new NewVehicleQuery(
-                query.brandDescription.split(" ")[0],
-                query.brandDescription.split(" ")[1])
+                brandDescription.split(" ")[0],
+                brandDescription.split(" ")[1])
         )).isEqualTo(1);
     }
 }
