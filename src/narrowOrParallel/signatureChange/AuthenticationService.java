@@ -1,7 +1,8 @@
 package narrowOrParallel.signatureChange;
 
 public class AuthenticationService {
-    public boolean isAuthenticated(int id) {
-        return id == 12345;
+
+    public boolean isAuthenticated(Identifier id){
+        return id.getId() == 12345;
     }
 }
